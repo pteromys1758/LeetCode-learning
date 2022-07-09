@@ -2,10 +2,10 @@
 ## 剑指Offer
 ### 第一天
 completed two questions
-剑指 Offer 09. 用两个栈实现队列
-剑指 Offer 30. 包含min函数的栈
-栈 先进后出 first in last output  
-队列 先进先出
+-指 Offer 09. 用两个栈实现队列
+-指 Offer 30. 包含min函数的栈
+  -先进后出 first in last output  
+  -列 先进先出
 
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
