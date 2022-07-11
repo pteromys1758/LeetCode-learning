@@ -45,7 +45,13 @@ print("输出链表最后一个",a[-1])
       #delimiter：分隔符。可以为空
       #delimiter：要连接的元素序列、字符串、元组、字典
   ```
-  - 
+  - 字符串遍历拼接```class Solution:
+    def reverseLeftWords(self, s: str, n: int) -> str:
+        res = ""
+        for i in range(n, n + len(s)):
+            res += s[i % len(s)]
+        return res
+        ```
 
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
