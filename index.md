@@ -26,7 +26,26 @@ print("输出链表最后一个",a[-1])
   - 双指针，迭代。截止条件没有想清楚。
 - 剑指 Offer 35. 复杂链表的复制
   - 哈希表，字典
-  - 拼接 + 拆分。空间更少，时间相同 
+  - 拼接 + 拆分。空间更少，时间相同
+
+### 第三天2022/7/11
+- 剑指 Offer 05. 替换空格
+  - 在 Python 和 Java 等语言中，字符串都被设计成「不可变」的类型，即无法直接修改字符串的某一位字符，需要新建一个字符串实现。
+  - 在 C++ 语言中， string 被设计成「可变」的类型，因此可以在不新建字符串的情况下实现原地修改。   
+- 剑指 Offer 58 - II. 左旋转字符串
+  - 利用切片 `：`
+  - 利用列表遍历拼接
+  ```class Solution:
+    def reverseLeftWords(self, s: str, n: int) -> str:
+        res = []
+        for i in range(n, n + len(s)):
+            res.append(s[i % len(s)])
+        return ''.join(res)
+      #语法： ‘delimiter’.join(seq)
+      #delimiter：分隔符。可以为空
+      #delimiter：要连接的元素序列、字符串、元组、字典
+  ```
+  - 
 
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
