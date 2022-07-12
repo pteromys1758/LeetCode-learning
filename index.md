@@ -58,15 +58,8 @@ print("输出链表最后一个",a[-1])
   ### 第4天2022/7/12
   - 剑指 Offer 03. 数组中重复的数字
     - 哈希表 / Set
-    ```
-    class Solution:
-    def findRepeatNumber(self, nums: [int]) -> int:
-        dic = set()
-        for num in nums:
-            if num in dic: return num
-            dic.add(num)
-        return -1
-    ``` 
+    - 原地交换
+    `Python 中， a, b = c, da,b=c,d 操作的原理是先暂存元组 (c, d)(c,d) ，然后 “按左右顺序” 赋值给 a 和 b 。`
   - 剑指 Offer 53 - I. 在排序数组中查找数字 I
   - 剑指 Offer 53 - II. 0～n-1中缺失的数字
 
