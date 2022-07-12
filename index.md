@@ -61,7 +61,10 @@ print("输出链表最后一个",a[-1])
     - 原地交换
     `Python 中， a, b = c, da,b=c,d 操作的原理是先暂存元组 (c, d)(c,d) ，然后 “按左右顺序” 赋值给 a 和 b 。`
   - 剑指 Offer 53 - I. 在排序数组中查找数字 I
+    - 二分法.有优化代码方法。本质是找插入点。 
   - 剑指 Offer 53 - II. 0～n-1中缺失的数字
+    - 暴力解法。注意如果是缺少最后一位特殊情况。
+    - 二分法.**二分法迷糊点，等号的有无，边界判断**
 
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
