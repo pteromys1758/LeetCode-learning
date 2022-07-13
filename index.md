@@ -1,4 +1,5 @@
 # LeetCode 学习记录
+[TOC]
 ## 剑指Offer
 ### 第1天2022/7/9
 completed two questions：
