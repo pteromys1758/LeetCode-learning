@@ -111,7 +111,43 @@ print("输出链表最后一个",a[-1])
         return False
     ```
   - 剑指 Offer 11. 旋转数组的最小数字
+    - 自己的暴力解法
+    ```
+    class Solution:
+    def minArray(self, numbers: List[int]) -> int:
+        for i in range(1, len(numbers)):
+            if numbers[i-1] > numbers[i]:
+                return numbers[i]
+        return numbers[0]
+    ```
+    - 二分法。很难想。事后还需二刷
+    ```
+    class Solution:
+    def minArray(self, numbers: [int]) -> int:
+        i, j = 0, len(numbers) - 1
+        while i < j:
+            m = (i + j) // 2
+            if numbers[m] > numbers[j]: i = m + 1
+            elif numbers[m] < numbers[j]: j = m
+            else: return min(numbers[i:j])
+        return numbers[i]
+    ```
   - 剑指 Offer 50. 第一个只出现一次的字符
+    - 自己的方法，都是hashmap。Python 3.6 后，默认字典就是有序的，因此无需使用 OrderedDict()
+      ```
+      class Solution:
+      def firstUniqChar(self, s: str) -> str:
+          dic = {}
+          for chr in s:
+              if chr in dic:
+                  dic[chr] += 1
+              else:
+                  dic[chr] = 1
+          for key, value in dic.items():
+              if value == 1:
+                  return key
+          return ' '
+      ```
 
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
