@@ -65,6 +65,53 @@ print("输出链表最后一个",a[-1])
   - 剑指 Offer 53 - II. 0～n-1中缺失的数字
     - 暴力解法。注意如果是缺少最后一位特殊情况。
     - 二分法.**二分法迷糊点，等号的有无，边界判断**
+  
+  ### 第5天2022/7/13
+  - 剑指 Offer 04. 二维数组中的查找
+    - 自己的方法，代码比较麻烦
+    ```
+    class Solution:
+    def findNumberIn2DArray(self, matrix: List[List[int]], target: int) -> bool:
+        if len(matrix) == 0:
+            return False
+        if len(matrix) < len(matrix[0]):
+            n, m = len(matrix), len(matrix[0])
+        else:
+            m, n = len(matrix), len(matrix[0])
+        for i in range(n):
+            if matrix[i][i] >= target or i == len(matrix)-1 or i ==len(matrix[0])-1:
+                for j in range(i, len(matrix)):
+                    if matrix[j][0] > target:
+                        break
+                    for k in range(i+1):
+                        if matrix[j][k] > target:
+                            break
+                        if matrix[j][k] == target:
+                            return True
+                for j in range(i, len(matrix[0])):
+                    if matrix[0][j] > target:
+                        break
+                    for k in range(i+1):
+                        if matrix[k][j] > target:
+                            break
+                        if matrix[k][j] == target:
+                            return True   
+                break 
+        return False                
+    ```
+    - 二叉搜索树
+    ```
+    class Solution:
+    def findNumberIn2DArray(self, matrix: List[List[int]], target: int) -> bool:
+        i, j = len(matrix) - 1, 0
+        while i >= 0 and j < len(matrix[0]):
+            if matrix[i][j] > target: i -= 1
+            elif matrix[i][j] < target: j += 1
+            else: return True
+        return False
+    ```
+  - 剑指 Offer 11. 旋转数组的最小数字
+  - 剑指 Offer 50. 第一个只出现一次的字符
 
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
