@@ -166,6 +166,17 @@ print("输出链表最后一个",a[-1])
         return res
     ``` 
   - 剑指 Offer 32 - II. 从上到下打印二叉树 II
+    - python没有自增与自减运算符,因为python中的数值类型的数据是不可变的，也就是其在内存中的值是不可变的，而自增自减运算符的含义就是在该数字原来的内存地址上对该数字进行改变。
   - 剑指 Offer 32 - III
+    - 层序遍历 + 双端队列
+    ```
+    if len(res) % 2: tmp.appendleft(node.val) # 偶数层 -> 队列头部
+    else: tmp.append(node.val) # 奇数层 -> 队列尾部
+    ```
+    -  层序遍历 + 双端队列（奇偶层逻辑分离）
+    -  层序遍历 + 倒序(切片函数)
+    ```
+    res.append(tmp[::-1] if len(res) % 2 else tmp)
+    ```
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
