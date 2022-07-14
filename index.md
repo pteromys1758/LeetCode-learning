@@ -148,6 +148,23 @@ print("输出链表最后一个",a[-1])
                   return key
           return ' '
       ```
-
+### 第6天2022/7/14
+  - 剑指 Offer 32 - I. 从上到下打印二叉树
+    - 广度优先搜索BFS。没想到>Python 中使用 collections 中的双端队列 deque() ，其 popleft() 方法可达到 O(1)O(1) 时间复杂度；列表 list 的 pop(0) 方法时间复杂度为 O(N)O(N) 
+    ```
+    class Solution:
+    def levelOrder(self, root: TreeNode) -> List[int]:
+        if not root: return []
+        res, queue = [], collections.deque()
+        queue.append(root)
+        while queue:
+            node = queue.popleft()
+            res.append(node.val)
+            if node.left: queue.append(node.left)
+            if node.right: queue.append(node.right)
+        return res
+    ``` 
+  - 剑指 Offer 32 - II. 从上到下打印二叉树 II
+  - 剑指 Offer 32 - III
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
