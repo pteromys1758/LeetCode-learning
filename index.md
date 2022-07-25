@@ -178,5 +178,23 @@ print("输出链表最后一个",a[-1])
     ```
     res.append(tmp[::-1] if len(res) % 2 else tmp)
     ```
+    
+### 第7天2022/7/25
+落了11天
+  - 剑指 Offer 26. 树的子结构
+    -  很难想，题解的递归代码十分简介
+    ```
+class Solution:
+    def isSubStructure(self, A: TreeNode, B: TreeNode) -> bool:
+        def recur(A, B):
+            if not B: return True
+            if not A or A.val != B.val: return False
+            return recur(A.left, B.left) and recur(A.right, B.right)
+#recur函数，判断两个数是否相同
+#关键点在于return， 先bool判断是否存在。存在， 在判断是否树相同； 不同，再递归，进行左右节点判断， 回到开始步骤
+        return bool(A and B) and (recur(A, B) or self.isSubStructure(A.left, B) or self.isSubStructure(A.right, B))
+    ```
+  - 剑指 Offer 27. 二叉树的镜像
+  - 剑指 Offer 28. 对称的二叉树
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
