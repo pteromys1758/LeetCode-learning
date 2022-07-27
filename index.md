@@ -182,7 +182,8 @@ print("输出链表最后一个",a[-1])
 ### 第7天2022/7/25
 落了11天
   - 剑指 Offer 26. 树的子结构
-    -  很难想，题解的递归代码十分简介
+    - 只用包含就可以，不用叶节点对叶节点
+    -  很难想，题解的递归代码十分简洁
     ```
     class Solution:
         def isSubStructure(self, A: TreeNode, B: TreeNode) -> bool:
@@ -190,11 +191,41 @@ print("输出链表最后一个",a[-1])
                 if not B: return True
                 if not A or A.val != B.val: return False
                 return recur(A.left, B.left) and recur(A.right, B.right)
-    #recur函数，判断两个数是否相同
-    #关键点在于return， 先bool判断是否存在。存在， 在判断是否树相同； 不同，再递归，进行左右节点判断， 回到开始步骤
+            #recur函数，判断两个数是否相同
+            #关键点在于return， 先bool判断是否存在。存在， 在判断是否树相同； 不同，再递归，进行左右节点判断， 回到开始步骤
             return bool(A and B) and (recur(A, B) or self.isSubStructure(A.left, B) or self.isSubStructure(A.right, B))
     ```
   - 剑指 Offer 27. 二叉树的镜像
+    - 这道题倒不是很难， 递归重要的还是结束条件
+    - self的使用， 是class类的全局变量名称， 递归是要用； 如果是class方法内的函数则不需要。
   - 剑指 Offer 28. 对称的二叉树
+    - 递归写着还是有困难。照着题解思路写出来了
+
+### 第8天2022/7/25
+  - 剑指 Offer 10- I. 斐波那契数列
+  - 剑指 Offer 10- II. 青蛙跳台阶问题
+    - 本质斐波那契数列公式
+  - 剑指 Offer 63. 股票的最大利润 
+    - **动态规划，最重要的是状态转移公式**
+### 第9天2022/7/26
+  - 剑指 Offer 42. 连续子数组的最大和
+    - 题解很简单
+    ```
+    def maxSubArray(self, nums: List[int]) -> int:
+        for i in range(1, len(nums)):
+            nums[i] += max(nums[i - 1], 0)
+        return max(nums)
+    ```
+  - 剑指 Offer 47. 礼物的最大价值
+    -  在「剑指 Offer 42. 连续子数组的最大和」基础上，每个点的位置的值表示到达本点的最大值，公式比较上面和左面就好了
+### 第10天2022/7/26
+  - 剑指 Offer 46. 把数字翻译成字符串
+  - 剑指 Offer 48. 最长不含重复字符的子字符串
+### 第9天
+### 第9天
+### 第9天
+### 第9天
+### 第9天
+### 第9天
 # Reference
 1.[Github文档](https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
